@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpintería en Alicante | Especialistas en Madera, Aluminio y PVC</title>
+    <meta name="description" content="Carpinteros en Alicante para particulares y empresas. Diseño, fabricación y montaje de muebles a medida, puertas, armarios y carpintería de aluminio. Presupuesto rápido por WhatsApp.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Carpintería Alicante">
+    <meta name="geo.region" content="ES-A">
+    <meta name="geo.placename" content="Alicante">
+    <link rel="canonical" href="https://carpinteriaalicante.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Carpintería en Alicante | Especialistas en Madera, Aluminio y PVC">
+    <meta property="og:description" content="Carpinteros en Alicante para particulares y empresas. Diseño, fabricación y montaje de muebles a medida, puertas, armarios y carpintería de aluminio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://carpinteriaalicante.com/">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:image" content="https://carpinteriaalicante.com/img/hero-bg.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wood: {
+                            50: '#fdf8f0',
+                            100: '#f9edd9',
+                            200: '#f2d7b0',
+                            300: '#e9bb7e',
+                            400: '#df9a4e',
+                            500: '#d6802f',
+                            600: '#c46824',
+                            700: '#a34f20',
+                            800: '#844021',
+                            900: '#6c361e',
+                            950: '#3a1a0e',
+                        },
+                        whatsapp: {
+                            DEFAULT: '#25D366',
+                            dark: '#128C7E',
+                            light: '#DCF8C6',
+                            hover: '#1ebe5d',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Playfair Display', 'Georgia', 'serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fdf8f0; }
+        ::-webkit-scrollbar-thumb { background: #d6802f; border-radius: 3px; }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Service card */
+        .service-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(58, 26, 14, 0.18);
+        }
+        .service-card:hover .card-img {
+            transform: scale(1.06);
+        }
+        .card-img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Dropdown menu */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* WhatsApp CTA pulse */
+        .wa-glow {
+            animation: waGlow 2.5s ease-in-out infinite;
+        }
+        @keyframes waGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
+            50% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+        }
+
+        /* Floating WA button */
+        .wa-float {
+            animation: waFloat 3s ease-in-out infinite;
+        }
+        @keyframes waFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* Hero parallax-like subtle movement */
+        .hero-bg {
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+        .mobile-menu.open {
+            max-height: 600px;
+        }
+    </style>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Carpintería Alicante",
+        "description": "Carpinteros en Alicante para particulares y empresas. Diseño, fabricación y montaje de muebles a medida, puertas, armarios y carpintería de aluminio.",
+        "url": "https://carpinteriaalicante.com",
+        "telephone": "+34603087323",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "C. del Cid, 22, 3F",
+            "postalCode": "03001",
+            "addressLocality": "Alicante",
+            "addressRegion": "Alicante",
+            "addressCountry": "ES"
+        },
+        "areaServed": ["Alicante","San Juan de Alicante","Mutxamel","San Vicente del Raspeig","El Campello"],
+        "serviceType": ["Carpintería de madera","Carpintería de aluminio","Muebles a medida","Armarios empotrados","Puertas","Ventanas PVC","Ebanistería"]
+    }
+    </script>
+</head>
+
+<body class="bg-wood-50 font-sans text-wood-950 antialiased">
+
+    <!-- ═══════════════════ HEADER ═══════════════════ -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-2xl border-b border-wood-100/50 shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
+            <div class="flex items-center justify-between h-20 lg:h-24">
+
+                <!-- Logo -->
+                <a href="index.html" id="logo" class="flex items-center gap-3 group shrink-0" aria-label="Carpintería Alicante — Inicio">
+                    <img src="img/logo2-clean.png" alt="Carpintería Alicante Logo" class="h-14 lg:h-16 w-auto object-contain transition-transform group-hover:scale-105" width="90" height="90">
+                    <div class="flex flex-col leading-none">
+                        <span class="font-display text-2xl lg:text-3xl font-bold text-wood-900 tracking-tight">Carpintería</span>
+                        <span class="text-xs font-bold uppercase tracking-[0.3em] text-wood-600 mt-1">Alicante</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" class="px-4 py-2 text-sm font-semibold text-wood-800 hover:text-wood-500 rounded-lg hover:bg-wood-50 transition-all">Inicio</a>
+
+                    <!-- Servicios Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-wood-800 hover:text-wood-500 rounded-lg hover:bg-wood-50 transition-all" aria-haspopup="true">
+                            Servicios
+                            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl shadow-wood-900/10 border border-wood-100 p-2 z-50">
+                            <a href="muebles-a-medida.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-wood-50 transition-colors group">
+                                <span class="w-8 h-8 rounded-lg bg-wood-100 flex items-center justify-center text-wood-600 group-hover:bg-wood-200 transition-colors text-sm">🪑</span>
+                                <span class="text-sm font-medium text-wood-800">Muebles a Medida</span>
+                            </a>
+                            <a href="puertas-madera.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-wood-50 transition-colors group">
+                                <span class="w-8 h-8 rounded-lg bg-wood-100 flex items-center justify-center text-wood-600 group-hover:bg-wood-200 transition-colors text-sm">🚪</span>
+                                <span class="text-sm font-medium text-wood-800">Puertas y Portajes</span>
+                            </a>
+                            <a href="armarios-empotrados.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-wood-50 transition-colors group">
+                                <span class="w-8 h-8 rounded-lg bg-wood-100 flex items-center justify-center text-wood-600 group-hover:bg-wood-200 transition-colors text-sm">🗄️</span>
+                                <span class="text-sm font-medium text-wood-800">Armarios Empotrados</span>
+                            </a>
+                            <a href="cocinas-a-medida.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-wood-50 transition-colors group">
+                                <span class="w-8 h-8 rounded-lg bg-wood-100 flex items-center justify-center text-wood-600 group-hover:bg-wood-200 transition-colors text-sm">🍳</span>
+                                <span class="text-sm font-medium text-wood-800">Muebles de Cocina y Baño</span>
+                            </a>
+                            <a href="suelos-tarima-parquet.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-wood-50 transition-colors group">
+                                <span class="w-8 h-8 rounded-lg bg-wood-100 flex items-center justify-center text-wood-600 group-hover:bg-wood-200 transition-colors text-sm">🪵</span>
+                                <span class="text-sm font-medium text-wood-800">Suelos y Tarimas</span>
+                            </a>
+                            <a href="carpinteria-aluminio-pvc.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-wood-50 transition-colors group">
+                                <span class="w-8 h-8 rounded-lg bg-wood-100 flex items-center justify-center text-wood-600 group-hover:bg-wood-200 transition-colors text-sm">🪟</span>
+                                <span class="text-sm font-medium text-wood-800">Aluminio y PVC</span>
+                            </a>
+                            <a href="ebanisteria-restauracion.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-wood-50 transition-colors group">
+                                <span class="w-8 h-8 rounded-lg bg-wood-100 flex items-center justify-center text-wood-600 group-hover:bg-wood-200 transition-colors text-sm">🔨</span>
+                                <span class="text-sm font-medium text-wood-800">Ebanistería y Restauración</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#contacto" class="px-4 py-2 text-sm font-semibold text-wood-800 hover:text-wood-500 rounded-lg hover:bg-wood-50 transition-all">Contacto</a>
+                </div>
+
+                <!-- Right: CTA + Mobile Burger -->
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/34603087323?text=Hola,%20necesito%20un%20presupuesto%20de%20carpinter%C3%ADa"
+                       id="header-wa" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-sm px-5 py-2.5 rounded-full shadow-lg shadow-whatsapp/25 hover:shadow-whatsapp/40 transition-all duration-300 active:scale-95">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span class="hidden sm:inline">WhatsApp Rápido</span>
+                        <span class="sm:hidden">WhatsApp</span>
+                    </a>
+
+                    <!-- Mobile hamburger -->
+                    <button id="mobile-toggle" class="lg:hidden p-2 rounded-lg hover:bg-wood-50 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+                        <svg id="burger-icon" class="w-6 h-6 text-wood-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <svg id="close-icon" class="w-6 h-6 text-wood-800 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu lg:hidden border-t border-wood-100/50">
+                <div class="py-4 space-y-1">
+                    <a href="index.html" class="block px-4 py-2.5 text-sm font-semibold text-wood-800 rounded-lg hover:bg-wood-50">Inicio</a>
+
+                    <div>
+                        <button id="mobile-services-toggle" class="w-full flex items-center justify-between px-4 py-2.5 text-sm font-semibold text-wood-800 rounded-lg hover:bg-wood-50">
+                            Servicios
+                            <svg id="mobile-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div id="mobile-services-list" class="mobile-menu pl-4">
+                            <a href="muebles-a-medida.html" class="block px-4 py-2 text-sm text-wood-600 hover:text-wood-900">🪑 Muebles a Medida</a>
+                            <a href="puertas-madera.html" class="block px-4 py-2 text-sm text-wood-600 hover:text-wood-900">🚪 Puertas y Portajes</a>
+                            <a href="armarios-empotrados.html" class="block px-4 py-2 text-sm text-wood-600 hover:text-wood-900">🗄️ Armarios Empotrados</a>
+                            <a href="cocinas-a-medida.html" class="block px-4 py-2 text-sm text-wood-600 hover:text-wood-900">🍳 Cocina y Baño</a>
+                            <a href="suelos-tarima-parquet.html" class="block px-4 py-2 text-sm text-wood-600 hover:text-wood-900">🪵 Suelos y Tarimas</a>
+                            <a href="carpinteria-aluminio-pvc.html" class="block px-4 py-2 text-sm text-wood-600 hover:text-wood-900">🪟 Aluminio y PVC</a>
+                            <a href="ebanisteria-restauracion.html" class="block px-4 py-2 text-sm text-wood-600 hover:text-wood-900">🔨 Ebanistería</a>
+                        </div>
+                    </div>
+
+                    <a href="#contacto" class="block px-4 py-2.5 text-sm font-semibold text-wood-800 rounded-lg hover:bg-wood-50">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ═══════════════════ HERO — FULL BACKGROUND ═══════════════════ -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <!-- Background image -->
+            <div class="absolute inset-0">
+                <img src="img/hero-bg.png"
+                     alt="Taller de carpintería profesional en Alicante"
+                     class="hero-bg w-full h-full object-cover"
+                     loading="eager" fetchpriority="high">
+                <!-- Dark overlay for contrast -->
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+                <!-- Subtle warm tint -->
+                <div class="absolute inset-0 bg-wood-900/15 mix-blend-multiply"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-28 sm:py-32">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-5 py-2 mb-8">
+                    <span class="w-2 h-2 rounded-full bg-whatsapp animate-pulse"></span>
+                    <span class="text-xs font-semibold text-white/90 tracking-wide">Más de 15 años de experiencia en Alicante</span>
+                </div>
+
+                <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
+                    Carpinteros en Alicante
+                    <span class="block mt-2 bg-gradient-to-r from-wood-200 via-wood-300 to-wood-400 bg-clip-text text-transparent">
+                        Madera, Aluminio y PVC a Medida
+                    </span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Fabricación, montaje y reparación. Escríbenos ahora y recibe tu
+                    <strong class="text-white">presupuesto sin compromiso en minutos.</strong>
+                </p>
+
+                <!-- CTA gigante -->
+                <a href="https://wa.me/34603087323?text=Hola,%20necesito%20un%20presupuesto%20de%20carpinter%C3%ADa"
+                   id="hero-cta" target="_blank" rel="noopener noreferrer"
+                   class="wa-glow inline-flex items-center gap-3 bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-lg sm:text-xl px-10 py-5 sm:py-6 rounded-2xl shadow-2xl hover:shadow-whatsapp/40 transition-all duration-300 active:scale-95">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Pedir Presupuesto por WhatsApp
+                </a>
+
+                <!-- Social proof -->
+                <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-white/60">
+                    <div class="flex items-center gap-1">
+                        <span class="text-yellow-400">★★★★★</span>
+                        <span class="ml-1 font-medium text-white/80">4.9/5</span>
+                    </div>
+                    <span class="hidden sm:inline text-white/20">|</span>
+                    <span>Respuesta media: <strong class="text-white/90">&lt;10 min</strong></span>
+                    <span class="hidden sm:inline text-white/20">|</span>
+                    <span>+500 proyectos realizados</span>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+                <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ SERVICIOS ═══════════════════ -->
+        <section id="servicios" class="py-20 sm:py-28 bg-white relative" aria-labelledby="servicios-h2">
+            <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-wood-200 to-transparent"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center mb-16 reveal">
+                    <span class="inline-block text-xs font-bold uppercase tracking-[0.3em] text-wood-500 mb-3">Lo que hacemos</span>
+                    <h2 id="servicios-h2" class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-wood-950 tracking-tight mb-4">
+                        Nuestros Servicios de Carpintería en Alicante
+                    </h2>
+                    <p class="text-wood-600 max-w-xl mx-auto text-lg">Soluciones integrales en madera, aluminio y PVC para tu hogar o negocio.</p>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+                    <!-- 1. Muebles a Medida -->
+                    <article class="service-card reveal group bg-white border border-wood-100 rounded-2xl overflow-hidden shadow-sm hover:border-wood-200" id="card-muebles">
+                        <a href="muebles-a-medida.html" class="block">
+                            <div class="relative h-52 overflow-hidden">
+                                <img src="img/muebles-medida.png" alt="Muebles a medida en Alicante — salones y librerías" class="card-img w-full h-full object-cover" loading="lazy" width="400" height="208">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-wood-900 mb-2">
+                                <a href="muebles-a-medida.html" class="hover:text-wood-600 transition-colors">Muebles a Medida</a>
+                            </h3>
+                            <p class="text-sm text-wood-600 mb-5 leading-relaxed">Salones, librerías y mobiliario adaptado a tu espacio y estilo de vida. Diseño personalizado.</p>
+                            <a href="https://wa.me/34603087323?text=Hola,%20necesito%20info%20sobre%20muebles%20a%20medida" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-whatsapp-dark hover:text-whatsapp transition-colors">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                Consultar por WhatsApp
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 2. Puertas y Portajes -->
+                    <article class="service-card reveal group bg-white border border-wood-100 rounded-2xl overflow-hidden shadow-sm hover:border-wood-200" id="card-puertas">
+                        <a href="puertas-madera.html" class="block">
+                            <div class="relative h-52 overflow-hidden">
+                                <img src="img/puertas-madera.png" alt="Puertas de madera en Alicante — paso, blindadas y acorazadas" class="card-img w-full h-full object-cover" loading="lazy" width="400" height="208">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-wood-900 mb-2">
+                                <a href="puertas-madera.html" class="hover:text-wood-600 transition-colors">Puertas y Portajes</a>
+                            </h3>
+                            <p class="text-sm text-wood-600 mb-5 leading-relaxed">Puertas de paso, blindadas y acorazadas. Máxima seguridad con diseño impecable.</p>
+                            <a href="https://wa.me/34603087323?text=Hola,%20necesito%20info%20sobre%20puertas%20de%20madera" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-whatsapp-dark hover:text-whatsapp transition-colors">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                Consultar por WhatsApp
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 3. Armarios Empotrados -->
+                    <article class="service-card reveal group bg-white border border-wood-100 rounded-2xl overflow-hidden shadow-sm hover:border-wood-200" id="card-armarios">
+                        <a href="armarios-empotrados.html" class="block">
+                            <div class="relative h-52 overflow-hidden">
+                                <img src="img/armarios-empotrados.png" alt="Armarios empotrados a medida en Alicante" class="card-img w-full h-full object-cover" loading="lazy" width="400" height="208">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-wood-900 mb-2">
+                                <a href="armarios-empotrados.html" class="hover:text-wood-600 transition-colors">Armarios Empotrados</a>
+                            </h3>
+                            <p class="text-sm text-wood-600 mb-5 leading-relaxed">Diseño, fabricación y montaje de interiores y frentes adaptados a cada rincón.</p>
+                            <a href="https://wa.me/34603087323?text=Hola,%20necesito%20info%20sobre%20armarios%20empotrados" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-whatsapp-dark hover:text-whatsapp transition-colors">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                Consultar por WhatsApp
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 4. Cocina y Baño -->
+                    <article class="service-card reveal group bg-white border border-wood-100 rounded-2xl overflow-hidden shadow-sm hover:border-wood-200" id="card-cocina">
+                        <a href="cocinas-a-medida.html" class="block">
+                            <div class="relative h-52 overflow-hidden">
+                                <img src="img/cocinas-medida.png" alt="Muebles de cocina a medida en Alicante" class="card-img w-full h-full object-cover" loading="lazy" width="400" height="208">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-wood-900 mb-2">
+                                <a href="cocinas-a-medida.html" class="hover:text-wood-600 transition-colors">Muebles de Cocina y Baño</a>
+                            </h3>
+                            <p class="text-sm text-wood-600 mb-5 leading-relaxed">Renovación y diseño a medida. Funcionalidad y estética en perfecta armonía.</p>
+                            <a href="https://wa.me/34603087323?text=Hola,%20necesito%20info%20sobre%20muebles%20de%20cocina%20y%20ba%C3%B1o" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-whatsapp-dark hover:text-whatsapp transition-colors">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                Consultar por WhatsApp
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 5. Suelos y Tarimas -->
+                    <article class="service-card reveal group bg-white border border-wood-100 rounded-2xl overflow-hidden shadow-sm hover:border-wood-200" id="card-suelos">
+                        <a href="suelos-tarima-parquet.html" class="block">
+                            <div class="relative h-52 overflow-hidden">
+                                <img src="img/suelos-tarima.png" alt="Suelos de madera y tarima flotante en Alicante" class="card-img w-full h-full object-cover" loading="lazy" width="400" height="208">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-wood-900 mb-2">
+                                <a href="suelos-tarima-parquet.html" class="hover:text-wood-600 transition-colors">Suelos de Madera y Tarimas</a>
+                            </h3>
+                            <p class="text-sm text-wood-600 mb-5 leading-relaxed">Parquet, tarima flotante y rodapiés. Calidez y elegancia bajo tus pies.</p>
+                            <a href="https://wa.me/34603087323?text=Hola,%20necesito%20info%20sobre%20suelos%20de%20madera%20y%20tarimas" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-whatsapp-dark hover:text-whatsapp transition-colors">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                Consultar por WhatsApp
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 6. Aluminio y PVC -->
+                    <article class="service-card reveal group bg-white border border-wood-100 rounded-2xl overflow-hidden shadow-sm hover:border-wood-200" id="card-aluminio">
+                        <a href="carpinteria-aluminio-pvc.html" class="block">
+                            <div class="relative h-52 overflow-hidden">
+                                <img src="img/aluminio-pvc.png" alt="Carpintería de aluminio y PVC en Alicante — ventanas y cerramientos" class="card-img w-full h-full object-cover" loading="lazy" width="400" height="208">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-wood-900 mb-2">
+                                <a href="carpinteria-aluminio-pvc.html" class="hover:text-wood-600 transition-colors">Carpintería de Aluminio y PVC</a>
+                            </h3>
+                            <p class="text-sm text-wood-600 mb-5 leading-relaxed">Ventanas, cerramientos, mosquiteras y puertas metálicas de alta calidad.</p>
+                            <a href="https://wa.me/34603087323?text=Hola,%20necesito%20info%20sobre%20carpinter%C3%ADa%20de%20aluminio%20y%20PVC" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-whatsapp-dark hover:text-whatsapp transition-colors">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                Consultar por WhatsApp
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 7. Ebanistería -->
+                    <article class="service-card reveal group bg-white border border-wood-100 rounded-2xl overflow-hidden shadow-sm hover:border-wood-200 sm:col-span-2 lg:col-span-1" id="card-ebanisteria">
+                        <a href="ebanisteria-restauracion.html" class="block">
+                            <div class="relative h-52 overflow-hidden">
+                                <img src="img/ebanisteria.png" alt="Ebanistería y restauración de muebles en Alicante" class="card-img w-full h-full object-cover" loading="lazy" width="400" height="208">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-wood-900 mb-2">
+                                <a href="ebanisteria-restauracion.html" class="hover:text-wood-600 transition-colors">Ebanistería y Restauración</a>
+                            </h3>
+                            <p class="text-sm text-wood-600 mb-5 leading-relaxed">Trabajos artesanales y recuperación de muebles con valor sentimental e histórico.</p>
+                            <a href="https://wa.me/34603087323?text=Hola,%20necesito%20info%20sobre%20ebanister%C3%ADa%20y%20restauraci%C3%B3n" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-whatsapp-dark hover:text-whatsapp transition-colors">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                Consultar por WhatsApp
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ ¿POR QUÉ ELEGIRNOS? ═══════════════════ -->
+        <section class="py-16 sm:py-24 bg-wood-50 relative" aria-labelledby="ventajas-h2">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14 reveal">
+                    <h2 id="ventajas-h2" class="font-display text-3xl sm:text-4xl font-bold text-wood-950 tracking-tight mb-4">¿Por qué elegirnos?</h2>
+                    <p class="text-wood-600 max-w-lg mx-auto">Más de 500 proyectos completados nos avalan.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+                    <div class="text-center group">
+                        <div class="w-16 h-16 rounded-2xl bg-whatsapp/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-whatsapp/20 transition-colors">
+                            <svg class="w-8 h-8 text-whatsapp-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-wood-900 mb-1.5">Respuesta Inmediata</h3>
+                        <p class="text-sm text-wood-600 leading-relaxed">Presupuesto en menos de 10 minutos por WhatsApp.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-16 h-16 rounded-2xl bg-wood-100 flex items-center justify-center mx-auto mb-4 group-hover:bg-wood-200 transition-colors">
+                            <svg class="w-8 h-8 text-wood-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-wood-900 mb-1.5">Profesionales Cualificados</h3>
+                        <p class="text-sm text-wood-600 leading-relaxed">Carpinteros titulados con más de 15 años de experiencia.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-16 h-16 rounded-2xl bg-wood-100 flex items-center justify-center mx-auto mb-4 group-hover:bg-wood-200 transition-colors">
+                            <svg class="w-8 h-8 text-wood-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-wood-900 mb-1.5">Presupuesto sin Compromiso</h3>
+                        <p class="text-sm text-wood-600 leading-relaxed">Precio cerrado antes de empezar. Sin sorpresas.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-16 h-16 rounded-2xl bg-wood-100 flex items-center justify-center mx-auto mb-4 group-hover:bg-wood-200 transition-colors">
+                            <svg class="w-8 h-8 text-wood-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        </div>
+                        <h3 class="font-bold text-wood-900 mb-1.5">Toda la Provincia</h3>
+                        <p class="text-sm text-wood-600 leading-relaxed">Servicio en Alicante capital y toda la comarca.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ CTA FINAL ═══════════════════ -->
+        <section id="contacto" class="relative py-24 sm:py-32 overflow-hidden" aria-labelledby="cta-h2">
+            <div class="absolute inset-0 bg-gradient-to-br from-wood-900 via-wood-800 to-wood-950"></div>
+            <div class="absolute inset-0 opacity-[0.07]">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-wood-400 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-whatsapp rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-5 py-2 mb-8">
+                        <span class="w-2 h-2 rounded-full bg-whatsapp animate-pulse"></span>
+                        <span class="text-xs font-semibold text-white/80 tracking-wide">Disponibles ahora</span>
+                    </div>
+
+                    <h2 id="cta-h2" class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 leading-tight">
+                        ¿Tienes un proyecto en mente?
+                        <span class="block text-wood-300 mt-1">Hablemos.</span>
+                    </h2>
+
+                    <p class="text-lg text-wood-300/90 max-w-xl mx-auto mb-10 leading-relaxed">
+                        No pierdas tiempo con correos electrónicos. Haz clic en el botón, cuéntanos qué necesitas
+                        <span class="text-white/70">(madera, aluminio, muebles a medida...)</span>
+                        y un carpintero experto te responderá al instante.
+                    </p>
+
+                    <a href="https://wa.me/34603087323?text=Hola,%20tengo%20un%20proyecto%20de%20carpinter%C3%ADa%20y%20me%20gustar%C3%ADa%20recibir%20un%20presupuesto"
+                       id="cta-final" target="_blank" rel="noopener noreferrer"
+                       class="wa-glow inline-flex items-center gap-3 bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-lg sm:text-xl px-10 py-5 sm:py-6 rounded-2xl shadow-2xl hover:shadow-whatsapp/30 transition-all duration-300 active:scale-95">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Abrir Chat de WhatsApp
+                    </a>
+
+                    <p class="mt-6 text-sm text-wood-400/80">
+                        📱 También puedes llamarnos al <a href="tel:+34603087323" class="underline hover:text-white transition-colors font-medium">603 08 73 23</a>
+                    </p>
+                    <p class="mt-2 text-sm text-wood-400/80 flex items-center justify-center gap-1.5">
+                        <svg class="w-4 h-4 text-wood-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        <span>C. del Cid, 22, 3F, 03001 Alicante</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="bg-wood-950 text-wood-400 py-14 sm:py-16" aria-label="Pie de página">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+
+                <!-- Brand -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-3 mb-4 group">
+                        <img src="img/logo2-clean.png" alt="Carpintería Alicante Logo" class="h-12 lg:h-14 w-auto object-contain brightness-0 invert opacity-90 transition-transform group-hover:scale-105" width="70" height="70">
+                        <div class="flex flex-col leading-none">
+                            <span class="font-display text-2xl lg:text-3xl font-bold text-white tracking-tight">Carpintería</span>
+                            <span class="text-xs font-bold uppercase tracking-[0.3em] text-wood-400 mt-1">Alicante</span>
+                        </div>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-3">Carpinteros profesionales en Alicante. Más de 15 años de experiencia en madera, aluminio y PVC.</p>
+                    <p class="text-xs text-wood-400 mb-3 flex items-start gap-2">
+                        <svg class="w-4 h-4 text-wood-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                        <span>C. del Cid, 22, 3F, 03001 Alicante</span>
+                    </p>
+                    <div class="flex flex-col gap-2">
+                        <a href="tel:+34603087323" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-wood-200 transition-colors">
+                            <svg class="w-4 h-4 text-wood-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                            603 08 73 23
+                        </a>
+                        <a href="https://wa.me/34603087323?text=Hola,%20necesito%20un%20presupuesto" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 text-sm font-semibold text-whatsapp hover:text-whatsapp-hover transition-colors">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            WhatsApp: 603 08 73 23
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="font-semibold text-white text-sm uppercase tracking-wider mb-4">Servicios</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="muebles-a-medida.html" class="hover:text-wood-200 transition-colors">Muebles a medida</a></li>
+                        <li><a href="puertas-madera.html" class="hover:text-wood-200 transition-colors">Puertas y portajes</a></li>
+                        <li><a href="armarios-empotrados.html" class="hover:text-wood-200 transition-colors">Armarios empotrados</a></li>
+                        <li><a href="cocinas-a-medida.html" class="hover:text-wood-200 transition-colors">Cocinas y baños</a></li>
+                        <li><a href="suelos-tarima-parquet.html" class="hover:text-wood-200 transition-colors">Suelos y tarimas</a></li>
+                        <li><a href="carpinteria-aluminio-pvc.html" class="hover:text-wood-200 transition-colors">Aluminio y PVC</a></li>
+                        <li><a href="ebanisteria-restauracion.html" class="hover:text-wood-200 transition-colors">Ebanistería</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h3 class="font-semibold text-white text-sm uppercase tracking-wider mb-4">Legal</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="/aviso-legal" class="hover:text-wood-200 transition-colors">Aviso Legal</a></li>
+                        <li><a href="/politica-privacidad" class="hover:text-wood-200 transition-colors">Política de Privacidad</a></li>
+                        <li><a href="/politica-cookies" class="hover:text-wood-200 transition-colors">Política de Cookies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Zones -->
+                <div>
+                    <h3 class="font-semibold text-white text-sm uppercase tracking-wider mb-4">Zonas de Servicio</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-whatsapp/60"></span> Alicante Capital</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-whatsapp/60"></span> San Juan de Alicante</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-whatsapp/60"></span> Muchamiel (Mutxamel)</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-whatsapp/60"></span> San Vicente del Raspeig</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-whatsapp/60"></span> El Campello</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-wood-800/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-wood-500">
+                <p>&copy; 2025 Carpintería Alicante. Todos los derechos reservados.</p>
+                <p>Carpinteros profesionales en Alicante &middot; Madera, Aluminio y PVC</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════ FLOATING WHATSAPP ═══════════════════ -->
+    <a href="https://wa.me/34603087323?text=Hola,%20necesito%20un%20presupuesto%20de%20carpinter%C3%ADa"
+       id="floating-wa" target="_blank" rel="noopener noreferrer"
+       class="wa-float fixed bottom-6 right-6 z-50 w-[60px] h-[60px] bg-whatsapp hover:bg-whatsapp-hover rounded-full flex items-center justify-center shadow-2xl shadow-whatsapp/35 hover:shadow-whatsapp/50 transition-all active:scale-90"
+       aria-label="Contactar por WhatsApp">
+        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
+    <script>
+        // ── Scroll reveal ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ── Header shadow on scroll ──
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('shadow-lg', window.scrollY > 60);
+            header.classList.toggle('shadow-sm', window.scrollY <= 60);
+        }, { passive: true });
+
+        // ── Smooth scroll for anchors ──
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.getBoundingClientRect().top + window.scrollY - header.offsetHeight - 16,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.remove('open');
+                    burgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            });
+        });
+
+        // ── Mobile menu toggle ──
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const burgerIcon = document.getElementById('burger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            burgerIcon.classList.toggle('hidden', isOpen);
+            closeIcon.classList.toggle('hidden', !isOpen);
+            mobileToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // ── Mobile services sub-menu ──
+        const servicesToggle = document.getElementById('mobile-services-toggle');
+        const servicesList = document.getElementById('mobile-services-list');
+        const mobileChevron = document.getElementById('mobile-chevron');
+
+        servicesToggle.addEventListener('click', () => {
+            const isOpen = servicesList.classList.toggle('open');
+            mobileChevron.style.transform = isOpen ? 'rotate(180deg)' : '';
+        });
+
+        // ── Close dropdown on outside click (desktop) ──
+        document.addEventListener('click', (e) => {
+            document.querySelectorAll('.dropdown').forEach(d => {
+                if (!d.contains(e.target)) d.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
