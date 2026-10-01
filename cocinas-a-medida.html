@@ -143,6 +143,109 @@
         .mobile-menu.open {
             max-height: 600px;
         }
+
+        /* ── Cookie Consent Banner ── */
+        .cookie-banner {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 9999;
+            max-width: 360px;
+            width: calc(100% - 32px);
+            background: #ffffff;
+            border: 1px solid rgba(28, 25, 23, 0.08);
+            border-radius: 16px;
+            padding: 18px 20px;
+            box-shadow: 0 12px 32px -4px rgba(28, 25, 23, 0.12), 0 4px 12px -2px rgba(28, 25, 23, 0.04);
+            font-family: inherit;
+            opacity: 0;
+            transform: translateY(16px);
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+        }
+        .cookie-banner.cookie-banner--visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .cookie-banner.cookie-banner--closing {
+            opacity: 0;
+            transform: translateY(16px);
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .cookie-banner__text {
+            font-size: 13.5px;
+            line-height: 1.5;
+            color: #44403c;
+            margin: 0;
+        }
+        .cookie-banner__link {
+            color: #d6802f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .cookie-banner__link:hover {
+            color: #a34f20;
+        }
+        .cookie-banner__actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        .cookie-banner__btn {
+            flex: 1;
+            padding: 9px 12px;
+            font-size: 13px;
+            font-family: inherit;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        .cookie-banner__btn:focus-visible {
+            outline: 2px solid #d6802f;
+            outline-offset: 2px;
+        }
+        .cookie-banner__btn--secondary {
+            background: #f5f5f4;
+            color: #57534e;
+            border: 1px solid #e7e5e4;
+            font-weight: 500;
+        }
+        .cookie-banner__btn--secondary:hover {
+            background: #e7e5e4;
+            color: #1c1917;
+            border-color: #d6d3d1;
+        }
+        .cookie-banner__btn--primary {
+            background: #d6802f;
+            color: #ffffff;
+            border: 1px solid transparent;
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(214, 128, 47, 0.25);
+        }
+        .cookie-banner__btn--primary:hover {
+            background: #c46824;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(214, 128, 47, 0.35);
+        }
+        .cookie-banner__btn--primary:active {
+            transform: translateY(0);
+        }
+        @media (max-width: 640px) {
+            .cookie-banner {
+                bottom: 16px;
+                left: 16px;
+                right: 16px;
+                max-width: calc(100% - 32px);
+                padding: 16px 18px;
+            }
+        }
     </style>
 
     <!-- Schema.org -->
@@ -497,6 +600,19 @@
         <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
+    <!-- ═══════════════════ COOKIE CONSENT BANNER ═══════════════════ -->
+    <aside id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies" class="cookie-banner">
+        <div class="cookie-banner__body">
+            <p class="cookie-banner__text">
+                Usamos cookies para mejorar tu experiencia y analizar el tráfico de la web. Consulta nuestra <a href="/politica-cookies" class="cookie-banner__link">política de cookies</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button type="button" id="cookie-reject" class="cookie-banner__btn cookie-banner__btn--secondary">Rechazar</button>
+                <button type="button" id="cookie-accept" class="cookie-banner__btn cookie-banner__btn--primary">Aceptar</button>
+            </div>
+        </div>
+    </aside>
+
     <!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
     <script>
         // ── Scroll reveal ──
@@ -559,6 +675,50 @@
                 if (!d.contains(e.target)) d.classList.remove('open');
             });
         });
+
+        // ── Cookie Consent Logic ──
+        (function() {
+            var consentKey = 'cookie_consent';
+            var banner = document.getElementById('cookie-banner');
+            if (!banner) return;
+
+            // Si el usuario ya aceptó o rechazó previamente, no mostramos nada
+            if (localStorage.getItem(consentKey)) {
+                banner.remove();
+                return;
+            }
+
+            // Mostrar con transición suave tras 700ms (experiencia no invasiva)
+            setTimeout(function() {
+                banner.classList.add('cookie-banner--visible');
+            }, 700);
+
+            function setConsent(choice) {
+                try {
+                    localStorage.setItem(consentKey, choice);
+                } catch (e) {}
+                banner.classList.remove('cookie-banner--visible');
+                banner.classList.add('cookie-banner--closing');
+                setTimeout(function() {
+                    banner.remove();
+                }, 350);
+            }
+
+            var btnAccept = document.getElementById('cookie-accept');
+            var btnReject = document.getElementById('cookie-reject');
+
+            if (btnAccept) {
+                btnAccept.addEventListener('click', function() {
+                    setConsent('accepted');
+                });
+            }
+
+            if (btnReject) {
+                btnReject.addEventListener('click', function() {
+                    setConsent('rejected');
+                });
+            }
+        })();
     </script>
 </body>
 </html>
